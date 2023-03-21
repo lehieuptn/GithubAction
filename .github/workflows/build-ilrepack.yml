@@ -13,7 +13,7 @@ jobs:
       - uses: nuget/setup-nuget@v1
       - run: nuget restore GithubAction.sln
       - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v1.1
+        uses: microsoft/setup-msbuild@v1.3.1
         with:
           msbuild-architecture: x64
       - name: Set up JDK 11

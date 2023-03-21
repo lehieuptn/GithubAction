@@ -14,4 +14,4 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
         with:
           msbuild-architecture: x64
-      - run: msbuild GithubAction.sln -t:rebuild -verbosity:diag -property:Configuration=Release
+      - run: msbuild GithubAction/GithubAction.csproj -t:rebuild -verbosity:diag -property:Configuration=Release

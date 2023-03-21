@@ -11,4 +11,6 @@ jobs:
     steps:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
-      - run: msbuild GithubAction\GithubAction.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
+        with:
+          msbuild-architecture: x64
+      - run: msbuild -t:rebuild -verbosity:diag -property:Configuration=Release

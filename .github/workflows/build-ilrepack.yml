@@ -10,6 +10,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
+      - uses: nuget/setup-nuget@v1
+      - run: nuget restore GithubAction.sln
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
         with:

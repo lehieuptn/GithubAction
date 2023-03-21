@@ -50,5 +50,6 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"lehieuptn_GithubAction" /o:"lehieuptn" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          msbuild GithubAction/GithubAction.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
+          msbuild GithubAction/GithubAction.csproj -t:restore
+          msbuild GithubAction/GithubAction.csproj -property:Configuration=Release
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"

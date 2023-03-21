@@ -9,4 +9,6 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - run: msbuild /p:Configuration=Release
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+      - run: msbuild GithubAction/GithubAction.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
